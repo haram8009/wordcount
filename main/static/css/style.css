@@ -1,0 +1,10 @@
+.container {
+  background-color: violet;
+  padding: 20rem;
+}
+
+.contents {
+  display: flex;
+  width: 80%;
+  background-color: gray;
+}

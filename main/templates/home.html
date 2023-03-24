@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ko">
+{% extends 'base.html' %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Word Counter</title>
-    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
-  </head>
+{% block content  %}    
+<form action={% url 'result' %} method='GET'>
+  <textarea name='text'></textarea>
+  <button type='submit'>submit</button>
+</form>
+{% endblock  %}
 
-  <body>
-    <div class="container">
-      <div class="contents">
-        <div class="header">
-          <img src="idk"/>
-          <span>Word-Counter.exe</span>
-          <button>x</button>
-          <a href={% url 'result' %}>gotoreuslt</a>
-          <form action={% url 'result' %} method='GET'>
-            <textarea name='text'></textarea>
-            <button type='submit'>submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
-
-</html>
+{% comment %} #signup.html에 적용될 js파일 경로 끼워넣기
+{% block js %}
+<script  type="text/javascript" src="{% static '/js/signup.js' %}"></script>
+{% endblock %} {% endcomment %}

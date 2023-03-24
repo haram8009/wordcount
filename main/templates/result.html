@@ -1,11 +1,15 @@
-<h1>This is Result</h1>
-<a href="{% url 'home' %}">goto home</a>
-<hr/>
+{% extends 'base.html' %}
 
-{% for key, val in words %}
-  단어 :
-  {{key}}
-  갯수:
-  {{val}}
-  <br/>
-{% endfor %}
+{% block content %}
+  <h1>This is Result</h1>
+  <a href="{% url 'home' %}">goto home</a>
+  <hr/>
+
+  {% for key, val in words %}
+    단어 :
+    {{key}}
+    갯수:
+    {{val}}
+    <br/>
+  {% endfor %}
+{% endblock content %}

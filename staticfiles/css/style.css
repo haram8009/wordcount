@@ -1,0 +1,35 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+html {
+  background-image: linear-gradient(
+    135deg,
+    #6b0848 25%,
+    #a40a3c 75%,
+    #ffc300 100%
+  );
+  /* 스크롤되는 문제 해결 */
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
+}
+.navbar {
+  position: sticky;
+  width: 100%;
+  height: 2rem;
+  background-color: #2d2727;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+}
+.contents {
+  display: flex;
+  width: 80%;
+  background-color: gray;
+}

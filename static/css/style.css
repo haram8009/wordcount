@@ -9,12 +9,22 @@ html {
   /* height: 100vh; */
   /* height: -webkit-fill-available;
   height: fill-available; */
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     135deg,
     #6b0848 25%,
     #a40a3c 75%,
     #ffc300 100%
-  );
+  ); */
+
+  background: #f27121;
+  background: -webkit-linear-gradient(
+      0deg,
+      #f27121 0%,
+      #e94057 50%,
+      #8a2387 100%
+    ),
+    linear-gradient(0deg, #f27121 0%, #e94057 50%, #8a2387 100%);
+
   min-width: 400px;
   max-height: 100vh;
 }
@@ -129,9 +139,9 @@ form {
   grid-template-rows: 1fr 1fr 1fr;
 }
 #detail {
+  display: grid;
   width: 100%;
   height: 15rem;
-  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .result {

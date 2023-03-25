@@ -10,8 +10,8 @@ def home(request):
 #텍스트에서 명사만 list로 반환해줌 (중복 고려 x)
 def KLT2023_Nlist(text):
     klt = klt2023()
-    list = klt.nouns(text) 
-    return list
+    lst = klt.nouns(text)
+    return lst
 
 def get_nltk_list(text):
     nltk.download('punkt')
@@ -62,4 +62,11 @@ def result(request):
     # nltk ver 총 단어 개수
     nltk_total_count = len(nltk_list)
 
-    return render(request, "result.html", {"simple_length":simple_length,'simple_words':simple_words,"simple_total_count":simple_total_count,"replaced_length":replaced_length, "klt_words":klt_words, "klt_total_count":klt_total_count, "nltk_words":nltk_words,"nltk_total_count":nltk_total_count})
+    return render(request, "result.html", {"simple_length":simple_length,
+                                           'simple_words':simple_words,
+                                           "simple_total_count":simple_total_count,
+                                           "replaced_length":replaced_length,
+                                           "klt_words":klt_words, 
+                                           "klt_total_count":klt_total_count,
+                                           "nltk_words":nltk_words,
+                                           "nltk_total_count":nltk_total_count})

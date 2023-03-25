@@ -44,6 +44,13 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:link {
+  color: #fff;
+}
 .container {
   display: flex;
   height: 100%;
@@ -131,7 +138,7 @@ form {
   cursor: pointer;
 }
 .color_orange {
-  color: #f2541f;
+  color: #e14715;
 }
 #result_summary {
   display: grid;

@@ -149,7 +149,7 @@ form {
   display: grid;
   width: 100%;
   height: 15rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .result {
   height: 100%;

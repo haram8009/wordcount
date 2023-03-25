@@ -3,7 +3,7 @@
 {% block content %}
   <div class="contents">
     <div class="description">
-      <h1>Result</h1>
+      <h2>Result</h2>
       <div id="result_summary">
         <p>1. 총 글자수</p>
         <p>공백포함
@@ -14,9 +14,14 @@
           <span class="color_orange">{{simple_total_count}}</span>
           개
         </p>
-        <p>3. 명사 개수 (KLT2023 ver.)</p>
+        <p>3. ko-명사 개수 (KLT2023 ver.)</p>
         <p>
           <span class="color_orange">{{klt_total_count}}</span>
+          개
+        </p>
+        <p>4. 단어 개수 (nltk ver.)</p>
+        <p>
+          <span class="color_orange">{{nltk_total_count}}</span>
           개
         </p>
       </div>
@@ -26,6 +31,7 @@
       <div id="detail">
         <h3>simple ver.</h3>
         <h3>KLT2023 ver.</h3>
+        <h3>nltk ver.</h3>
 
         <div class="result">
           {% for key, val in simple_words %}
@@ -36,6 +42,13 @@
         </div>
         <div class="result">
           {% for key, val in klt_words %}
+            <span>{{key}}</span>
+            <span class="color_orange">{{val}}</span>
+            <br/>
+          {% endfor %}
+        </div>
+        <div class="result">
+          {% for key, val in nltk_words %}
             <span>{{key}}</span>
             <span class="color_orange">{{val}}</span>
             <br/>

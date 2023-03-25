@@ -6,17 +6,19 @@ body {
 }
 html {
   /* 스크롤되는 문제 해결 */
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+  /* height: 100vh; */
+  /* height: -webkit-fill-available;
+  height: fill-available; */
   background-image: linear-gradient(
     135deg,
     #6b0848 25%,
     #a40a3c 75%,
     #ffc300 100%
   );
+  min-width: 400px;
 }
 body {
+  /* 스크롤 문제 재발 */
   height: 100%;
 }
 .navbar {
@@ -36,22 +38,102 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
-.contents {
+.app-container {
   display: flex;
   width: 80%;
-  padding: 0 0.1rem;
+  /* height: 30rem; */
   color: #fff;
-  box-sizing: border-box;
   flex-direction: column;
+  box-sizing: border-box;
   background-color: #3c4048;
   border-radius: 0.5rem;
+  justify-content: center;
 }
 .header {
   display: flex;
   width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: space-between;
   background-color: #2d2727;
   /* border-bottom: 0.1rem solid #3c4048; */
-  border-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+#header-home-btn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: url("/static/images/home_icon.png");
+  background-color: transparent;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.contents {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+}
+
+.description {
+  box-sizing: border-box;
+  /* padding: 5rem 0; */
+}
+form {
+  height: 100%;
+}
+
+.form-box {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+#target-textarea {
+  width: 100%;
+  height: 10rem;
+  box-sizing: border-box;
+  resize: none;
+}
+
+#submit-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-image: url("/static/images/chat_submit_icon.png");
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color_orange {
+  color: #f2541f;
+}
+#result_summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+#detail {
+  width: 100%;
+  height: 20rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.result {
+  height: 100%;
+  overflow: scroll;
 }

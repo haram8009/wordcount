@@ -12,28 +12,31 @@
   <body>
     <div class="navbar">
       <div>
-        <img src="" alt="apple"/>
+        <img width="20rem" src="{% static '/images/apple_icon.png'%}" alt="apple"/>
         <span>Finder</span>
       </div>
       <div>
-        <img src="" alt="battery etc">
-        <img src="" alt="wifi etc">
+        <img width="20rem" src="{% static '/images/battery_icon.png'%}" alt="battery">
+        <img width="20rem" src="{% static '/images/wifi_icon.png'%}" alt="wifi">
         <span class="clock"></span>
       </div>
     </div>
 
     <div class="container">
-      <div class="contents">
+      <div class="app-container">
         <div class="header">
-          <img src="" alt="logo"/>
+          <img width="20rem" src="{% static '/images/word_icon.png'%}" alt="logo"/>
           <span>Word-Counter.exe</span>
-          <button>home</button>
+          <a href="{% url 'home' %}">
+            <button id="header-home-btn"></button>
+          </a>
         </div>
         {% block content %}{% endblock %}
       </div>
     </div>
 
-    <script type="text/javascript" src="{% static '/js/clock.js'%}"></script>
+    <script type=" text/javascript" src=" {% static '/js/clock.js'%} "></script>
+    {% block scrips %}{% endblock scrips %}
   </body>
 
 </html>

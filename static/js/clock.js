@@ -3,6 +3,8 @@ console.log("clock.js");
 var clock = document.querySelector(".clock");
 
 const getTime = () => {
+  console.log("getTime");
+
   const time = new Date();
   const months = [
     "Jan",

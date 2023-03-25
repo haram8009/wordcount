@@ -5,31 +5,82 @@ body {
   border: 0;
 }
 html {
+  /* 스크롤되는 문제 해결 */
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
   background-image: linear-gradient(
     135deg,
     #6b0848 25%,
     #a40a3c 75%,
     #ffc300 100%
   );
-  /* 스크롤되는 문제 해결 */
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+}
+body {
+  /* 스크롤 문제 재발 */
+  height: 100%;
 }
 .navbar {
+  display: flex;
   position: sticky;
   width: 100%;
   height: 2rem;
-  background-color: #2d2727;
+  padding: 0 1rem;
   color: #fff;
-  display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
+  background-color: #2d2727;
+  justify-content: space-between;
   align-items: center;
 }
 .container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
-.contents {
+.app-container {
   display: flex;
   width: 80%;
-  background-color: gray;
+  color: #fff;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #3c4048;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  padding: 0 0.1rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2d2727;
+  /* border-bottom: 0.1rem solid #3c4048; */
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+#header-home-btn {
+  background-color: transparent;
+  background-image: none; /*url*/
+  cursor: pointer;
+}
+
+.contents {
+  padding: 20rem 30rem;
+}
+
+.form-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#target-textarea {
+  width: 100%;
+  border: 1px solid rgb(42, 42, 42);
+  box-sizing: border-box;
+  resize: none;
 }

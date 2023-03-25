@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content  %}    
-<form action={% url 'result' %} method='GET'>
-  <textarea name='text'></textarea>
-  <button type='submit'>submit</button>
-</form>
-{% endblock  %}
+{% block content %}
+  <div class="contents">
+    <form action={% url 'result' %} method='GET'>
+      <div class="form-box">
+        <div class="description">
+          <h1>Count your words</h1>
+          <h3>
+            <strong class="color_orange">"Word-Counter.exe"</strong>
+            will count your words
+          </h3>
+          <p>1. 글자수 세기 (공백포함, 미포함)</p>
+          <p>2. 단어 개수 (simple ver.)</p>
+          <p>3. 명사 개수 (KLT2023 ver.)</p>
+        </div>
+        <textarea name='text' id="target-textarea"></textarea>
+        <button type='submit' id="submit-btn"></button>
+      </div>
+    </form>
+  </div>
 
-{% comment %} #signup.html에 적용될 js파일 경로 끼워넣기
-{% block js %}
-<script  type="text/javascript" src="{% static '/js/signup.js' %}"></script>
-{% endblock %} {% endcomment %}
+{% endblock %}

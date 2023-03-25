@@ -7,16 +7,16 @@
       <div id="result_summary">
         <p>1. 총 글자수</p>
         <p>공백포함
-          <span class="color_orange">00</span>자 | 미포함
-          <span class="color_orange">00</span>자</p>
+          <span class="color_orange">{{simple_length}}</span>자 | 미포함
+          <span class="color_orange">{{replaced_length}}</span>자</p>
         <p>2. 단어 개수 (simple ver.)</p>
         <p>
-          <span class="color_orange">00</span>
+          <span class="color_orange">{{simple_total_count}}</span>
           개
         </p>
         <p>3. 명사 개수 (KLT2023 ver.)</p>
         <p>
-          <span class="color_orange">00</span>
+          <span class="color_orange">{{klt_total_count}}</span>
           개
         </p>
       </div>
@@ -28,13 +28,19 @@
         <h3>KLT2023 ver.</h3>
 
         <div class="result">
-          {% for key, val in words %}
+          {% for key, val in simple_words %}
             <span>{{key}}</span>
             <span class="color_orange">{{val}}</span>
             <br/>
           {% endfor %}
         </div>
-        <div class="result"></div>
+        <div class="result">
+          {% for key, val in klt_words %}
+            <span>{{key}}</span>
+            <span class="color_orange">{{val}}</span>
+            <br/>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endblock content %}

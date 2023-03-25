@@ -1,21 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+import re
+from konlp.kma.klt2023 import klt2023
 
 def home(request):
     return render(request, 'home.html')
 
 #텍스트에서 명사만 list로 반환해줌 (중복 고려 x)
 def KLT2023_Nlist(text):
-    from konlp.kma.klt2023 import klt2023
     klt = klt2023()
     list = klt.nouns(text) 
     return list
 
 def result(request):
-    text = request.GET['text']
-    # replaced length
-    replaced_length = len(text.replace(" ",""))
-    # simple ver.
+    text = request.GET['text'].strip()
+    if not len(text):
+        # print("문자를 입력하세요")
+        return redirect(reverse("home"))
+
     simple_length = len(text)
+    # replaced_text는 글자 사이의 개행문자는 제거안됨
+    replaced_text = re.sub("\n","",re.sub(" ", "", text))
+    replaced_length = len(replaced_text)
+    # simple ver.
     simple_text_list = text.split()
     simple_word_dict = {}
     for word in simple_text_list:

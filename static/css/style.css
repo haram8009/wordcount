@@ -5,17 +5,6 @@ body {
   border: 0;
 }
 html {
-  /* 스크롤되는 문제 해결 */
-  /* height: 100vh; */
-  /* height: -webkit-fill-available;
-  height: fill-available; */
-  /* background-image: linear-gradient(
-    135deg,
-    #6b0848 25%,
-    #a40a3c 75%,
-    #ffc300 100%
-  ); */
-
   background: #f27121;
   background: -webkit-linear-gradient(
       0deg,
@@ -29,7 +18,6 @@ html {
   max-height: 100vh;
 }
 body {
-  /* 스크롤 문제 재발 */
   height: 100%;
 }
 .navbar {
@@ -44,6 +32,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+#navbar-right{
+  display: flex;
+  gap: 0.5rem;
+}
+
 a {
   color: #fff;
   text-decoration: none;
